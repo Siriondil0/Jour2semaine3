@@ -19,7 +19,7 @@ def ask_name
   [name1,name2]
 end
 
-# lance un jeu et continu a jouer si les joueurs le veulent
+# lance un jeu et continue a jouer si les joueurs le veulent
 def perform
   name = ask_name
   game1 = Game.new(name[0], name[1])
