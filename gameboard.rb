@@ -29,7 +29,7 @@ class Board
   # Colorise la valeur suivant la valeur de la case
   def colorize (val)
     if val == "="
-      return val.green
+      return val.black
     elsif val == "X"
       return val.blue.bold
     elsif val == "O"
@@ -89,7 +89,7 @@ end
 # Chaque joueur a un nom et un symbole (X pour le 1er et O pour le second)
 class Players
   #deux joueurs dans la partie
-   attr_accessor :name, :symbol, :count_victory
+   attr_accessor :name, :symbol, :victory_count
    @@all = 0
  
   #initialise joueur 1 avec X et joueur 2 avec O
@@ -101,7 +101,7 @@ class Players
       @symbol = "O"
     end
     @@all += 1
-    @count_victory = 0
+    @victory_count = 0
   end
 
 end
