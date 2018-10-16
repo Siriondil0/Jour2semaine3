@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-require "./colorization.rb"
+require 'bundler'
+Bundler.require
+
+require "colorization.rb"
 require "pry"
 
 # classe du plateau de jeu
@@ -25,7 +28,7 @@ class Board
     puts "| #{colorize(@cases[0].value)} | #{colorize(@cases[1].value)} | #{colorize(@cases[2].value)} |"
     puts "            -------------"
     print "          B ".cyan.bold
-    puts"| #{colorize(@cases[3].value)} | #{colorize(@cases[4].value)} | #{colorize(@cases[5].value)} |"
+    puts "| #{colorize(@cases[3].value)} | #{colorize(@cases[4].value)} | #{colorize(@cases[5].value)} |"
     puts "            -------------"
     print "          C ".cyan.bold
     puts "| #{colorize(@cases[6].value)} | #{colorize(@cases[7].value)} | #{colorize(@cases[8].value)} |"

@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
-require './tictactoe.rb'
-require './gameboard.rb'
-require './colorization.rb'
+require 'bundler'
+Bundler.require
+
+$:.unshift File.expand_path("./../lib", __FILE__)
+require 'tictactoe.rb'
 require "pry"
 require "rubocop"
 
-#demande le nom des joueurs
+# demande le nom des joueurs
 def ask_name
   puts "Bienvenue dans ce jeu de morpions. Il se joue à deux. Veuillez entrer chacun votre tour votre nom."
   print "Nom du 1er joueur: >"
@@ -20,7 +22,7 @@ end
 # lance un jeu et continu a jouer si les joueurs le veulent
 def perform
   name = ask_name
-  game1 = Game.new(name[0],name[1])
+  game1 = Game.new(name[0], name[1])
   game_continue = "Y"
   while game_continue =~ /Y/i
     game1.new_game

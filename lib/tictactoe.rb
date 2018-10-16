@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-require './gameboard.rb'
-require './colorization.rb'
+require 'bundler'
+Bundler.require
+
+require "gameboard.rb"
+require "colorization.rb"
 require "pry"
 require "rubocop"
 
@@ -68,7 +71,7 @@ class Game
     puts "Les cases sont au format 'A1', 'B2', etc..."
     while @board.game_not_finished
       puts
-      puts "Tour #{turn_played+1}"
+      puts "Tour #{turn_played + 1}"
       puts "#{@who_play.name}, à toi de jouer. Donne la case que tu veux jouer."
       print ">"
       case_played = gets.chomp
