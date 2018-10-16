@@ -43,7 +43,7 @@ class Board
     elsif val == "X"
       val.blue.bold
     elsif val == "O"
-      val.magenta.italic.bold
+      val.green.italic.bold
     end
   end
 
