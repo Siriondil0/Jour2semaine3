@@ -18,24 +18,29 @@ class Board
 
   # Affiche le @casesleau. On teste pour chaque case le symbole pour le coloriser de manière appropriée
   def display
-    puts "     1   2   3"
-    puts "   -------------"
-    puts " A | #{colorize(@cases[0].value)} | #{colorize(@cases[1].value)} | #{colorize(@cases[2].value)} |"
-    puts "   -------------"
-    puts " B | #{colorize(@cases[3].value)} | #{colorize(@cases[4].value)} | #{colorize(@cases[5].value)} |"
-    puts "   -------------"
-    puts " C | #{colorize(@cases[6].value)} | #{colorize(@cases[7].value)} | #{colorize(@cases[8].value)} |"
-    puts "   -------------"
+    puts
+    puts "              1   2   3".cyan.bold
+    puts "            -------------"
+    print "          A ".cyan.bold
+    puts "| #{colorize(@cases[0].value)} | #{colorize(@cases[1].value)} | #{colorize(@cases[2].value)} |"
+    puts "            -------------"
+    print "          B ".cyan.bold
+    puts"| #{colorize(@cases[3].value)} | #{colorize(@cases[4].value)} | #{colorize(@cases[5].value)} |"
+    puts "            -------------"
+    print "          C ".cyan.bold
+    puts "| #{colorize(@cases[6].value)} | #{colorize(@cases[7].value)} | #{colorize(@cases[8].value)} |"
+    puts "            -------------"
+    puts
   end
 
   # Colorise la valeur suivant la valeur de la case
   def colorize(val)
     if val == "="
-      val.black
+      val.hide
     elsif val == "X"
       val.blue.bold
     elsif val == "O"
-      val.red.italic
+      val.magenta.italic.bold
     end
   end
 

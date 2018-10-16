@@ -34,9 +34,9 @@ class Game
   # accorde correctement victoire selon le nombre de victoire
   def good_spelling(victory_number)
     if victory_number > 1
-      return "victoires"
+      "victoires"
     else
-      return "victoire"
+      "victoire"
     end
   end
 
@@ -65,17 +65,20 @@ class Game
     @board.game_not_finished = true
     turn_played = 0
     @board.display
+    puts "Les cases sont au format 'A1', 'B2', etc..."
     while @board.game_not_finished
-      puts "C'est au #{@who_play.name} de jouer. Veuillez dire sur quelle case vous voulez jouer."
+      puts
+      puts "Tour #{turn_played+1}"
+      puts "#{@who_play.name}, à toi de jouer. Donne la case que tu veux jouer."
       print ">"
       case_played = gets.chomp
       until @board.valid?(identify(case_played))
-        puts "La case est invalide, donne-en une autre"
+        puts "La case est invalide, donnes-en une autre"
         print ">"
         case_played = gets.chomp
       end
       while @board.occupied?(identify(case_played))
-        puts "La case est occupée, donne-en une autre"
+        puts "La case est occupée, donnes-en une autre"
         print ">"
         case_played = gets.chomp
       end
