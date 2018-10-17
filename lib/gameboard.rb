@@ -3,6 +3,8 @@
 require 'bundler'
 Bundler.require
 
+require 'boardcase.rb'
+require 'player.rb'
 require "colorization.rb"
 require "pry"
 
@@ -84,31 +86,3 @@ class Board
   end
 end
 
-# Chaque case du tableau contient une valeur. On initialise la valeur à "=" pour que les cases ne soient pas vide
-class BoardCase
-  # chaque case contient une croix ou un rond
-  attr_accessor :value
-
-  def initialize
-    @value = "="
-  end
-end
-
-# Chaque joueur a un nom et un symbole (X pour le 1er et O pour le second)
-class Players
-  # deux joueurs dans la partie
-  attr_accessor :name, :symbol, :victory_count
-  @@all = 0
-
-  # initialise joueur 1 avec X et joueur 2 avec O
-  def initialize(name)
-    @name = name
-    @symbol = if @@all.even?
-                "X"
-              else
-                "O"
-              end
-    @@all += 1
-    @victory_count = 0
-  end
-end
