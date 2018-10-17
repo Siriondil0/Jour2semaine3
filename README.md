@@ -5,7 +5,9 @@ Projet fait au début en collaboration avec Romain Recher
 Lancez main.rb pour jouer au morpion.
 
 Le fichier colorization.rb contient des ajouts de def à la classe strings permettant de colorer les chaines de caractères selon les besoins.</br>
-Le fichier gameboard.rb contient les classes Player, BoardCase et Board.</br>
+Le fichier gameboard.rb contient la classes Board.</br>
+e fichier player.rb contient la classes Player.</br>
+e fichier boardcase.rb contient la classes BoardCase .</br>
 Le fichier tictactoe.rb contient la classe Game.</br>
 Le fichier main.rb permet de lancer le jeu.</br>
 
